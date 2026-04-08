@@ -12,7 +12,7 @@ const {
   auth,
   loginRateLimiter,
   feedbackRequestsLimiter,
-} = require("../middlewares");
+} = require("../middleware");
 
 userRouter.post("/signin", loginRateLimiter, signin);
 userRouter.post("/signup", signup);

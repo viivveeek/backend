@@ -1,4 +1,6 @@
-const { userModel, bugModel, feedbackModel } = require("../models");
+const userModel = require("../models/userModel");
+const bugModel = require("../models/bug");
+const feedbackModel = require("../models/feedback");
 
 const bcrypt = require("bcrypt");
 const nodemailer = require("nodemailer");

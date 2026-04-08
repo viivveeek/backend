@@ -1,9 +1,9 @@
 const express = require("express");
 const app = express();
 require("dotenv").config();
-const { forgotPassword } = require("./controllers/userController");
+const { forgotPassword } = require("../controllers/userController");
 const port = process.env.PORT || 5000;
-const { apilimiter } = require("./middlewares");
+const { apiLimiter } = require("../middleware");
 
 // Server hardware information
 const si = require("systeminformation");
@@ -41,13 +41,14 @@ app.use(
 require("../config/db");
 
 // routes
-const { userRouter, formRouter } = require("./routes");
+const userRouter = require("../routes/userRoutes");
+const formRouter = require("../routes/formRoutes");
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.set("trust proxy", true);
-app.use(apilimiter);
+app.use(apiLimiter);
 
 app.use("/api/users", userRouter);
 app.use("/api/forms", formRouter);

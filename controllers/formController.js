@@ -1,4 +1,4 @@
-const { formModel } = require("../models");
+const formModel = require("../models/form");
 // JWT not used here
 
 const saveForm = async (req, res) => {

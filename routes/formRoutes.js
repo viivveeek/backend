@@ -6,7 +6,7 @@ const {
 } = require("../controllers/formController");
 
 const formRouter = express.Router();
-const { auth } = require("../middlewares");
+const { auth } = require("../middleware");
 
 formRouter.post("/", auth, saveForm);
 formRouter.get("/", auth, getAllForms);
